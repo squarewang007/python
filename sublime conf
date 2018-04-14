@@ -1,0 +1,119 @@
+# sublime text3 and python 3.6.5 configuration
+
+
+>>>>>>>>>>>>>>>>>>>
+
+>>> version3 key active:
+
+—– BEGIN LICENSE —– 
+TwitterInc 
+200 User License 
+EA7E-890007 
+1D77F72E 390CDD93 4DCBA022 FAF60790 
+61AA12C0 A37081C5 D0316412 4584D136 
+94D7F7D4 95BC8C1C 527DA828 560BB037 
+D1EDDD8C AE7B379F 50C9D69D B35179EF 
+2FE898C4 8E4277A8 555CE714 E1FB0E43 
+D5D52613 C3D12E98 BC49967F 7652EED2 
+9D2D2E61 67610860 6D338B72 5CF95C69 
+E36B85CC 84991F19 7575D828 470A92AB 
+—— END LICENSE ——
+
+...
+
+
+1.  Ctrl+`  >>>> input
+
+import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) 
+
+From:https://packagecontrol.io/installation
+
+
+>>>>>>>>>
+
+按Ctrl+Shift+P调出Package Control的面板，输入pcip（package control：install package首字母）安装插件
+
+>>>>>>>
+2.
+   name : boxy theme 
+   config :   
+
+{
+	// Activation
+"color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
+"theme": "Boxy Ocean.sublime-theme",
+// Settings
+"theme_accent_cyan": true,
+"theme_bar": true,
+"theme_bar_logo_atomized": true,
+"theme_bar_shadow_hidden": true,
+"theme_button_rounded": true,
+"theme_dirty_colored_always": true,
+"theme_icons_materialized": true,
+"theme_scrollbar_rounded": true,
+"theme_sidebar_highlight_selected_text_only": true,
+"theme_sidebar_highlight_text_only": true,
+"theme_sidebar_indent_top_level_disabled": true,
+"theme_size_md": true,SublimeCodeIntel
+"theme_tab_highlight_text_only": true,
+"theme_tab_selected_transparent": true,
+"theme_tab_selected_underlined": true,
+"theme_tab_size_xxl": true,
+"theme_unified": true,
+}
+
+>>>>>>>>>>>>>>>>>>>>>
+
+3. SublimeCodeIntel   按不上，用pip3 安装的。
+
+>>> PIP3 install  --upgrade --pre CodeIntel
+
+4.pylint  pip3 install pylint
+ >>> path set
+5.SublimeTmp,SideBarEnhancements
+6.sublimerepl
+>>>>set keys 
+[
+    {"keys":["f2"],
+        "caption": "SublimeREPL: Python",
+        "command": "run_existing_window_command", "args":
+        {
+            "id": "repl_python",
+            "file": "config/Python/Main.sublime-menu"
+        }
+    },
+    {"keys":[""],
+        "caption": "SublimeREPL: Python - PDB current file",
+        "command": "run_existing_window_command", "args":
+        {
+            "id": "repl_python_pdb",
+            "file": "config/Python/Main.sublime-menu"
+        }
+    },
+    {"keys":["f1"],
+        "caption": "SublimeREPL: Python - RUN current file",
+        "command": "run_existing_window_command", "args":
+        {
+            "id": "repl_python_run",
+            "file": "config/Python/Main.sublime-menu"
+        }
+    },
+    {"keys":["f3"],//ssh connection@
+        "command": "python_virtualenv_repl",
+        "caption": "SublimeREPL: Python - virtualenv"
+    },
+    {"keys":[""],
+        "caption": "SublimeREPL: Python - IPython",
+        "command": "run_existing_window_command", "args":
+        {
+            "id": "repl_python_ipython",
+            "file": "config/Python/Main.sublime-menu"
+        }
+    }
+]
+
+7.Python PEP8 Autoformat   //format  keys:ctrl+shift+R
+>>>
+>>>>>>>>>>>>>>>>end.
+
+end.
